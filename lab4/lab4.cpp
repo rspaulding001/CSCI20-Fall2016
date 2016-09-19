@@ -30,5 +30,5 @@ int main()
     cout << userNumber << " is a great number." << endl;
     cout << "However, I only have about " << userDecimal << " of my patience left" << specialSymbol << endl;
     
-
+    return 0;
 }
