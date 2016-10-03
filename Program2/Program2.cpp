@@ -115,27 +115,27 @@ int main ()
     DistanceConverter dis4;
     DistanceConverter dis5;
     
-    dis1.SetMiles(1); 
+    dis1.SetMiles(1);                   //problem 1-4
     cout << "Problems 1-4" << endl;
     dis1.DistancePrint();
     
-    
-    dis2.SetMeters(16);
+        
+    dis2.SetMeters(16);                 //problem 5
     cout << "Problem 5" << endl;
     dis2.DistancePrint();
     
     
-    dis3.SetYards(20);
+    dis3.SetYards(20);                  // problem 6
     cout << "Problem 6" << endl;
     dis3.DistancePrint();
     
     
-    dis4.SetInches(100);
+    dis4.SetInches(100);                //problem 7
     cout << "Problem 7" << endl;
     dis4.DistancePrint();
    
     
-    dis5.SetMeters(1);
+    dis5.SetMeters(1);                  //problem 8
     cout << "Problem 8" << endl;
     dis5.DistancePrint();
     
