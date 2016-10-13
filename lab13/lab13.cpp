@@ -18,21 +18,21 @@ int main () {
     char c1;
 
 /*
-while (hour < 2) {
-    minute = 0;
+while (hours < 2) {
+    minutes = 0;
         
-        while(minute <= 59){
-            cout << hour << ":";
+        while(minutes <= 59){
+            cout << hours << ":";
             
-            if (minute <= 9){
-                cout << "0" << minute << endl;
+            if (minutes <= 9){
+                cout << "0" << minutes << endl;
             }
             else {
-                cout << minute << endl;
+                cout << minutes << endl;
             }
-        ++minute;
+        ++minutes;
         }
-        ++hour;
+        ++hours;
 };    
 */    
     
