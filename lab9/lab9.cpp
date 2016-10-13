@@ -67,6 +67,6 @@ double TemperatureConverter::GetTempAsFahrenheit(){
 
 void TemperatureConverter::PrintTemps(){
     cout << GetTempFromKelvin()    << "K" << endl;
-    cout << GetTempAsCelsius()   << "C" << endl;
-    cout << GetTempAsFahrenheit() << "F" << endl;
+    cout << GetTempAsCelsius()     << "C" << endl;
+    cout << GetTempAsFahrenheit()  << "F" << endl;
 }
