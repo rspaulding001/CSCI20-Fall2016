@@ -56,6 +56,8 @@ while (startHour != endHour) {
         startMinutes = startMinutes + 15;
     }
     startHour ++;
+    startMinutes = startMinutes - 60;
+
     
     if(startHour >= 24) {
         startHour = startHour - 24;
