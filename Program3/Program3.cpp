@@ -11,69 +11,99 @@ using namespace std;
 
 
 
-class ComputerInfo {
+class ComputerInfo { 
     private:
         int startNum;
         int endNum;
+        int computerNum;
         
     public:
+        //default constructor
+        ComputerInfo();
+        void SetStartNum(int X);
+        void SetEndNum( int Y);
+        void SetComputerNum();
+        double GetComputerNum();
+        int GetEndNum();
+        int GetStartNum();
+};
+        //default constructor
+        ComputerInfo::ComputerInfo(){
+            startNum = 1;
+            endNum = 10;
+            return;
+        }
         //set the beginging of the guessing range
-        void SetStartNum(int X) {
-                cout << "Enter a starting number to guess between: " << endl;
-                cin  >> X;
-                startNum = X;
+        void ComputerInfo::SetStartNum(int X) {
+            startNum = X;
         }
         // sets the end of the guessing range
-        void SetEndNum(int Y) {                 
-                cout << "Enter an ending number to guess between: " << endl;    
-                cin  >> Y;
-                endNum = Y;
+        void ComputerInfo::SetEndNum(int Y) {
+            endNum = Y;
         }
-        int GetStartNum() {
+        void ComputerInfo::SetComputerNum() {
+            computerNum = rand() % (GetEndNum() - GetStartNum() + 1) + GetStartNum();
+        }
+        double ComputerInfo::GetComputerNum(){
+            return computerNum;
+        }
+        int ComputerInfo::GetStartNum() {
             return startNum;
         }
-        int GetEndNum() {
+        int ComputerInfo::GetEndNum() {
             return endNum;
         }
         
-};
+
 
 
 int main() {
     //initialization of all variables
-   int startNum =0;
-   int endNum =0;
-   int computerNum = 0;
-   int userNum = 0;
-   int numGuesses =0;
-   int score =0;
-   int percent =0;
+    int startNum =1;
+    int endNum =10;
+    int userNum = 0;
+    int numGuesses =0;
+    double score =0.0;
+    double percent =0.0;
    
    ComputerInfo Game;
-   Game.SetStartNum(startNum);
-   Game.SetEndNum(endNum);
+   
+        cout << "Enter a begining range number: " << endl;
+        cin  >> startNum;
+    Game.SetStartNum(startNum);
+    
+        cout << "Enter an ending range number: " << endl;
+        cin  >> endNum;
+    Game.SetEndNum(endNum);
+    
+    
    //calculates the computer's random number within the user's given range
-    computerNum = (rand() % ((Game.GetEndNum() - Game.GetStartNum()) + 1) + Game.GetStartNum());
-     
+    Game.SetComputerNum();
+   
+    
+     cout << "Enter a number: " << endl;
+     cin  >> userNum;
             //game continues until the user matches the computer's number
-            while (userNum != computerNum) {
-                cout << "Enter a number to guess" << endl;
-                cin  >> userNum;
-                //if the user's number is greater than the computer's it prints 'lower'
-                if (userNum > computerNum) {
+            while (userNum != Game.GetComputerNum()) {
+
+                //if the user's number is greater than the computer's it prdoubles 'lower'
+                if (userNum > Game.GetComputerNum()) {
                     cout << "Lower" << endl << endl;
                     numGuesses++;
                 }
-                //if the user's number is less than the computer's it prints 'higher'
-                else if (userNum < computerNum) {
+                //if the user's number is less than the computer's it prdoubles 'higher'
+                else if (userNum < Game.GetComputerNum()) {
                     cout << "Higher" << endl << endl;
                     numGuesses++;
                 }
-                //if the user's number is the same as the computer's the game prints 'winner' and ends
-                else if (userNum == computerNum) {
+                //if the user's number is the same as the computer's the game prdoubles 'winner' and ends
+                else if (userNum == Game.GetComputerNum()) {
                     cout << "Winner" << endl << endl;
                     numGuesses++;
                 }
+                cout << "Enter a number to guess" << endl;
+                cin  >> userNum;
+                numGuesses++;
             }
                 //score calculation
                 cout << "You guessed a total of " << numGuesses << " times" <<endl;
