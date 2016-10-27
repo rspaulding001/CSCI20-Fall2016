@@ -15,9 +15,7 @@ int varX =0;
 
  string Menu[SIZE];     //array
  
-    cout << "Enter one item from the menu" << endl;
-    cout << "When you're done enter 'Finished'." << endl;
-    
+
     i = 1;
     
     while (i < SIZE && Menu[i - 1] != "Finished") {                         //keeps printing and asking for a menu choice until the user inputs 'Finished'
